@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATA AutoRent — Аренда автомобилей в Алматы без залога | 24/7</title>
+<meta name="description" content="Аренда автомобилей в Алматы без залога и депозита. От 18 лет. Работаем 24/7. Звоните: +7 705 555 9004">
+<meta name="keywords" content="аренда авто Алматы, прокат автомобилей Алматы, аренда машины без залога, автопрокат Алматы, ata autorent">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ataautorent.com/">
+<link rel="icon" href="photo_auto/favicon.ico" type="image/x-icon">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ATA AutoRent — Аренда авто в Алматы без залога">
+<meta property="og:description" content="Аренда автомобилей без залога. От 18 лет. 24/7.">
+<meta property="og:url" content="https://ataautorent.com/">
+<meta property="og:image" content="https://ataautorent.com/og-image.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRental","name":"ATA AutoRent","telephone":"+77055559004","address":{"@type":"PostalAddress","streetAddress":"ул. Розыбакиева 285/1, 4 этаж, кабинет 3","addressLocality":"Алматы","addressCountry":"KZ"},"openingHours":"Mo-Su 00:00-23:59","priceRange":"₸₸"}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+:root {
+  --bg:#141414; --bg2:#1c1c1c; --bg3:#242424;
+  --white:#f0eeea; --muted:#888; --border:#2e2e2e;
+  --accent:#c0a060; --accent2:#d4b478; --card:#1a1a1a;
+}
+body { background:var(--bg); color:var(--white); font-family:'Manrope',sans-serif; overflow-x:hidden; }
+
+nav { position:fixed; top:0; left:0; right:0; z-index:200; display:flex; align-items:center; justify-content:space-between; padding:16px 6%; background:rgba(20,20,20,0.95); backdrop-filter:blur(16px); border-bottom:1px solid var(--border); }
+.logo {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.9rem;
+  letter-spacing:4px;
+  color:var(--accent);
+  text-decoration:none;
+  line-height:1;
+}
+.logo span { color:var(--white); }
+
+.logo img {
+  width:40px;
+  height:40px;
+  border-radius:20%;
+  object-fit:cover;
+  margin-left: 0;
+}
+.nav-center { display:flex; gap:28px; list-style:none; }
+.nav-center a { color:var(--muted); text-decoration:none; font-size:.78rem; font-weight:700; letter-spacing:1.8px; text-transform:uppercase; transition:color .2s; }
+.nav-center a:hover { color:var(--accent); }
+.lang-switcher { display:flex; gap:4px; }
+.lang-btn { background:none; border:1px solid var(--border); color:var(--muted); padding:5px 10px; border-radius:3px; font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:700; letter-spacing:1px; cursor:pointer; transition:all .2s; }
+.lang-btn:hover,.lang-btn.active { background:var(--accent); border-color:var(--accent); color:#000; }
+.burger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; }
+.burger span { display:block; width:24px; height:2px; background:var(--white); border-radius:2px; }
+
+.hero { min-height:100vh; display:flex; flex-direction:column; justify-content:flex-end; padding:0 6% 80px; position:relative; overflow:hidden; background:#0e0e0e;}
+.hero-bg { position:absolute; inset:0; z-index:1; pointer-events:none;}
+.hero-bg img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 30%;
+  opacity:0;
+  display:block;
+  transition:opacity 2s ease;
+  pointer-events:none;
+}
+.hero-bg img.loaded {
+  opacity:.4;
+}
+.hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(192,160,96,.12); border:1px solid rgba(192,160,96,.3); border-radius:100px; padding:6px 16px; font-size:.75rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--accent); margin-bottom:24px; width:fit-content; }
+
+.hero h1 { font-family:'Bebas Neue',sans-serif; font-size:clamp(3.5rem,9vw,8rem); line-height:.95; letter-spacing:3px; margin-bottom:24px; max-width:800px; z-index: 1;}
+.hero h1 em { color:var(--accent); font-style:normal; z-index: 1;}
+.hero-sub { font-size:1rem; color:var(--muted); max-width:440px; line-height:1.7; margin-bottom:44px; }
+.hero-ctas { display:flex; gap:14px; flex-wrap:wrap; }
+.btn-primary { display:inline-flex; align-items:center; gap:10px; background:var(--accent); color:#000; font-family:'Manrope',sans-serif; font-weight:800; font-size:.85rem; letter-spacing:1px; text-transform:uppercase; padding:16px 30px; border-radius:4px; text-decoration:none; border:none; cursor:pointer; transition:background .5s,transform .15s; z-index: 1; }
+.btn-primary:hover { background:var(--accent2); transform:translateY(-2px); }
+.btn-secondary { display:inline-flex; align-items:center; gap:10px; background:transparent; color:var(--white); font-family:'Manrope',sans-serif; font-weight:700; font-size:.85rem; letter-spacing:1px; text-transform:uppercase; padding:16px 30px; border-radius:4px; text-decoration:none; border:1px solid var(--border); cursor:pointer; transition:border-color .2s,transform .15s; z-index: 1;}
+.btn-secondary:hover { border-color:var(--accent); color:var(--accent); transform:translateY(-2px); }
+.btn-ghost { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.05); color:var(--white); font-family:'Manrope',sans-serif; font-weight:700; font-size:.85rem; letter-spacing:1px; text-transform:uppercase; padding:16px 30px; border-radius:4px; text-decoration:none; border:1px solid var(--border); cursor:pointer; transition:background .2s,transform .15s; z-index: 1;}
+.btn-ghost:hover { background:rgba(255,255,255,.09); transform:translateY(-2px); }
+.hero-stats { position:absolute; right:6%; bottom:80px; display:flex; flex-direction:column; gap:28px; }
+.stat { text-align:right; }
+.stat-num { font-family:'Bebas Neue',sans-serif; font-size:2.4rem; color:var(--accent); line-height:1; }
+.stat-label { font-size:.72rem; color:var(--muted); letter-spacing:1.5px; text-transform:uppercase; }
+
+section { padding:90px 6%; }
+.section-label { display:inline-block; font-size:.72rem; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:14px; }
+.section-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(2.2rem,5vw,3.8rem); letter-spacing:2px; margin-bottom:50px; line-height:1.05; }
+
+.cat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:60px; }
+.cat-card { border:1px solid var(--border); border-radius:10px; padding:32px 28px; cursor:pointer; transition:border-color .25s,transform .2s; position:relative; overflow:hidden; }
+.cat-card:hover { transform:translateY(-4px); border-color:rgba(192,160,96,.4); }
+.cat-basic { background:linear-gradient(135deg,#1a1a1a,#161616); }
+.cat-medium { background:linear-gradient(135deg,#1c1a16,#161410); }
+.cat-premium { background:linear-gradient(135deg,#1a1510,#120e08); }
+.cat-icon { font-size:2rem; margin-bottom:14px; }
+.cat-tier { font-family:'Bebas Neue',sans-serif; font-size:1.6rem; letter-spacing:3px; margin-bottom:6px; }
+.cat-basic .cat-tier { color:#a0a0a0; }
+.cat-medium .cat-tier { color:var(--accent); }
+.cat-premium .cat-tier { color:#f0c060; }
+.cat-desc { font-size:.8rem; color:var(--muted); line-height:1.5; margin-bottom:16px; }
+.cat-price-range { font-size:.82rem; font-weight:700; display:flex; align-items:center; gap:8px; }
+.cat-basic .cat-price-range { color:#a0a0a0; }
+.cat-medium .cat-price-range { color:var(--accent); }
+.cat-premium .cat-price-range { color:#f0c060; }
+.cat-dot { display:inline-block; width:7px; height:7px; border-radius:50%; }
+.cat-basic .cat-dot { background:#a0a0a0; }
+.cat-medium .cat-dot { background:var(--accent); }
+.cat-premium .cat-dot { background:#f0c060; }
+
+#catalog { background:var(--bg2); }
+.catalog-section { margin-bottom:60px; }
+.catalog-section:last-child { margin-bottom:0; }
+.catalog-section-header { display:flex; align-items:center; gap:14px; margin-bottom:24px; padding-bottom:16px; border-bottom:1px solid var(--border); }
+.catalog-section-title { font-family:'Bebas Neue',sans-serif; font-size:1.8rem; letter-spacing:2px; }
+.tier-badge { font-size:.68rem; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:4px 12px; border-radius:3px; }
+.tier-basic { color:#888; border:1px solid #333; background:rgba(255,255,255,.03); }
+.tier-medium { color:var(--accent); border:1px solid rgba(192,160,96,.3); background:rgba(192,160,96,.06); }
+.tier-premium { color:#f0c060; border:1px solid rgba(240,192,96,.3); background:rgba(240,192,96,.06); }
+.cars-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:20px; }
+.car-card { background:var(--card); border:1px solid var(--border); border-radius:8px; overflow:hidden; transition:transform .25s,border-color .25s; }
+.car-card:hover { transform:translateY(-5px); border-color:rgba(192,160,96,.4); }
+
+.car-slider { position:relative; width:100%; height:200px; overflow:hidden; background:#1a1a1a; }
+.car-slides { display:flex; height:100%; transition:transform .35s ease; }
+.car-slide { min-width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#222,#1a1a1a); }
+.car-slide img { width:100%; height:100%; object-fit:cover; }
+.car-img-placeholder { font-size:4rem; opacity:.15; }
+.slider-btn { position:absolute; top:50%; transform:translateY(-50%); z-index:10; background:rgba(0,0,0,.55); border:none; color:#fff; width:32px; height:32px; border-radius:50%; cursor:pointer; font-size:16px; display:flex; align-items:center; justify-content:center; transition:background .2s; }
+.slider-btn:hover { background:rgba(192,160,96,.75); }
+.slider-btn.prev { left:8px; }
+.slider-btn.next { right:8px; }
+.slider-dots { position:absolute; bottom:8px; left:50%; transform:translateX(-50%); display:flex; gap:5px; }
+.slider-dot { width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,.35); cursor:pointer; transition:background .2s; }
+.slider-dot.active { background:var(--accent); }
+.car-badge { position:absolute; top:14px; left:14px; background:rgba(0,0,0,.7); border:1px solid var(--border); border-radius:3px; font-size:.68rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--muted); padding:4px 10px; }
+.car-body { padding:22px; }
+.car-name { font-family:'Bebas Neue',sans-serif; font-size:1.5rem; letter-spacing:2px; margin-bottom:4px; }
+.car-class { font-size:.75rem; color:var(--muted); margin-bottom:18px; }
+.car-specs { display:flex; gap:16px; margin-bottom:20px; }
+.car-spec { display:flex; align-items:center; gap:6px; font-size:.75rem; color:var(--muted); }
+.car-footer { display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--border); padding-top:18px; }
+.car-price-num { font-family:'Bebas Neue',sans-serif; font-size:1.6rem; color:var(--accent); letter-spacing:1px; }
+.car-price-per { font-size:.7rem; color:var(--muted); }
+.btn-rent { display:inline-flex; align-items:center; gap:6px; background:var(--accent); color:#000; font-weight:800; font-size:.75rem; letter-spacing:1px; text-transform:uppercase; padding:10px 18px; border-radius:3px; text-decoration:none; transition:background .2s; }
+.btn-rent:hover { background:var(--accent2); }
+
+#terms { background:var(--bg); }
+.terms-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:18px; }
+.term-card { background:var(--bg3); border:1px solid var(--border); border-radius:8px; padding:28px; transition:border-color .2s; }
+.term-card:hover { border-color:rgba(192,160,96,.3); }
+.term-icon { font-size:1.8rem; margin-bottom:14px; }
+.term-title { font-weight:800; font-size:.9rem; letter-spacing:.5px; margin-bottom:8px; }
+.term-text { font-size:.82rem; color:var(--muted); line-height:1.65; }
+
+#reviews { background:var(--bg2); }
+.reviews-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:18px; }
+.review-card { background:var(--card); border:1px solid var(--border); border-radius:10px; overflow:hidden; transition:transform .25s,border-color .25s; }
+.review-card:hover { transform:translateY(-4px); border-color:rgba(192,160,96,.3); }
+.review-yt-wrap { width:100%; aspect-ratio:9/16; position:relative; background:#000; }
+.review-yt-wrap iframe { position:absolute; inset:0; width:100%; height:100%; border:none; }
+.review-yt-placeholder { width:100%; aspect-ratio:9/16; background:linear-gradient(160deg,#111,#0a0a0a); display:flex; align-items:center; justify-content:center; border-bottom:1px solid var(--border); }
+.yt-placeholder-inner { display:flex; flex-direction:column; align-items:center; gap:12px; text-align:center; padding:20px; }
+.yt-num { font-family:'Bebas Neue',sans-serif; font-size:1.1rem; letter-spacing:2px; color:var(--accent); }
+.yt-hint { font-size:.65rem; color:var(--muted); opacity:.6; line-height:1.6; letter-spacing:.5px; }
+.review-body { padding:16px; }
+.review-stars { color:var(--accent); font-size:.9rem; margin-bottom:8px; }
+.review-name { font-weight:800; font-size:.88rem; margin-bottom:3px; }
+.review-car { font-size:.7rem; color:var(--accent); margin-bottom:10px; letter-spacing:.5px; }
+.review-text { font-size:.78rem; color:var(--muted); line-height:1.6; }
+
+#contacts { background:var(--bg3); }
+.contacts-wrap { display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:start; }
+.contact-ctas { display:flex; flex-direction:column; gap:14px; }
+.contact-btn { display:flex; align-items:center; gap:16px; padding:18px 24px; border-radius:6px; text-decoration:none; font-weight:700; font-size:.9rem; transition:transform .2s; border:1px solid transparent; }
+.contact-btn:hover { transform:translateX(6px); }
+.contact-btn-icon { width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.btn-whatsapp { background:rgba(37,211,102,.1); border-color:rgba(37,211,102,.2); color:#25d366; }
+.btn-whatsapp .contact-btn-icon { background:rgba(37,211,102,.15); }
+.btn-call { background:rgba(192,160,96,.08); border-color:rgba(192,160,96,.2); color:var(--accent); }
+.btn-call .contact-btn-icon { background:rgba(192,160,96,.12); }
+.btn-instagram { background:rgba(225,48,108,.08); border-color:rgba(225,48,108,.2); color:#e1306c; }
+.btn-instagram .contact-btn-icon { background:rgba(225,48,108,.12); }
+.contact-info { padding-top:10px; }
+.contact-info-title { font-family:'Bebas Neue',sans-serif; font-size:1.8rem; letter-spacing:2px; margin-bottom:20px; }
+.info-row { display:flex; flex-direction:column; gap:4px; margin-bottom:22px; }
+.info-label { font-size:.7rem; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:4px; }
+.info-value { font-size:.95rem; font-weight:600; line-height:1.5; }
+.info-link { font-size:.82rem; color:var(--accent); text-decoration:none; margin-top:6px; display:inline-block; }
+.info-link:hover { text-decoration:underline; }
+.badge-247 { display:inline-flex; align-items:center; gap:6px; background:rgba(192,160,96,.1); border:1px solid rgba(192,160,96,.2); border-radius:100px; padding:7px 16px; font-size:.78rem; font-weight:800; color:var(--accent); letter-spacing:1px; width:fit-content; }
+
+footer { background:var(--bg); border-top:1px solid var(--border); padding:30px 6%; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px; }
+.footer-logo { font-family:'Bebas Neue',sans-serif; font-size:1.4rem; letter-spacing:3px; color:var(--accent); }
+.footer-copy { font-size:.75rem; color:var(--muted); }
+.footer-dev { font-size:.72rem; color:var(--muted); }
+.footer-dev a { color:var(--accent); text-decoration:none; transition:opacity .2s; }
+.footer-dev a:hover { opacity:.7; }
+.footer-dev { font-size:.7rem; color:var(--muted); opacity:.5; }
+.footer-dev a { color:var(--accent); text-decoration:none; }
+.footer-dev a:hover { text-decoration:underline; opacity:1; }
+
+.mobile-menu { display:none; position:fixed; inset:0; z-index:190; background:rgba(14,14,14,.98); flex-direction:column; align-items:center; justify-content:center; gap:32px; }
+.mobile-menu.open { display:flex; }
+.mobile-menu a { font-family:'Bebas Neue',sans-serif; font-size:2.5rem; letter-spacing:4px; color:var(--white); text-decoration:none; transition:color .2s; }
+.mobile-menu a:hover { color:var(--accent); }
+.mobile-lang { display:flex; gap:8px; margin-top:10px; }
+
+@media(max-width:900px) {
+  .nav-center { display:none; }
+  .hero-stats { display:none; }
+  .contacts-wrap { grid-template-columns:1fr; }
+  .burger { display:flex; }
+  .cat-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media(max-width:600px) {
+  section { padding:60px 5%; }
+  nav { padding:14px 5%; }
+  .hero { padding:0 5% 60px; }
+  footer { flex-direction:column; align-items:flex-start; }
+}
+
+.cat-cuv { background:linear-gradient(135deg,#141a1c,#0e1214); }
+.cat-cuv .cat-tier { color:#6eb8d4; }
+.cat-cuv .cat-price-range { color:#6eb8d4; }
+.cat-cuv .cat-dot { background:#6eb8d4; }
+.cat-cuv:hover { border-color:rgba(110,184,212,.4) !important; }
+.tier-cuv { color:#6eb8d4; border:1px solid rgba(110,184,212,.3); background:rgba(110,184,212,.06); }
+.modal-overlay { display:none; position:fixed; inset:0; z-index:500; background:rgba(0,0,0,.82); backdrop-filter:blur(8px); align-items:center; justify-content:center; padding:20px; }
+.modal-overlay.open { display:flex; }
+.modal { background:#1a1a1a; border:1px solid var(--border); border-radius:12px; width:100%; max-width:520px; overflow:hidden; position:relative; animation:modalIn .22s ease; }
+@keyframes modalIn { from{opacity:1} to{opacity:1} }
+.modal-close { position:absolute; top:12px; right:12px; z-index:10; background:rgba(0,0,0,.65); border:1px solid var(--border); color:var(--white); width:32px; height:32px; border-radius:50%; cursor:pointer; font-size:17px; display:flex; align-items:center; justify-content:center; transition:background .2s; }
+.modal-close:hover { background:rgba(192,160,96,.35); }
+.modal-img { width:100%; height:210px; object-fit:cover; display:block; }
+.modal-img-placeholder { width:100%; height:210px; background:linear-gradient(135deg,#222,#1a1a1a); display:flex; align-items:center; justify-content:center; font-size:5rem; opacity:.12; }
+.modal-body { padding:22px; }
+.modal-name { font-family:'Bebas Neue',sans-serif; font-size:1.9rem; letter-spacing:2px; margin-bottom:3px; }
+.modal-cls { font-size:.75rem; color:var(--muted); margin-bottom:18px; }
+.modal-specs { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:18px; }
+.modal-spec { background:var(--bg3); border:1px solid var(--border); border-radius:6px; padding:11px 13px; }
+.modal-spec-label { font-size:.62rem; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-bottom:4px; }
+.modal-spec-value { font-size:.88rem; font-weight:700; }
+.modal-footer { display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--border); padding-top:16px; }
+.modal-price { font-family:'Bebas Neue',sans-serif; font-size:1.9rem; color:var(--accent); letter-spacing:1px; }
+.modal-price-label { font-size:.68rem; color:var(--muted); }
+
+.fade-in { opacity:1; }
+</style>
+</head>
+<body>
+
+<div class="modal-overlay" id="carModal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalImg"></div>
+    <div class="modal-body">
+      <div class="modal-name" id="modalName"></div>
+      <div class="modal-cls" id="modalCls"></div>
+      <div class="modal-specs" id="modalSpecs"></div>
+      <div id="modalDesc" style="font-size:.82rem;color:var(--muted);line-height:1.65;margin-bottom:18px;padding:14px;background:var(--bg3);border-radius:6px;border:1px solid var(--border);"></div>
+      <div class="modal-footer">
+        <div><div class="modal-price" id="modalPrice"></div><div class="modal-price-label" id="modalPriceLbl"></div></div>
+        <a id="modalWa" class="btn-rent" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <a href="#home" class="logo"> <img src="photo_auto/favicon.ico" alt="ATA AutoRent">
+    ATA <span>AutoRent</span></a>
+  <ul class="nav-center">
+    <li><a href="#catalog" data-i18n="nav_catalog">Каталог</a></li>
+    <li><a href="#terms" data-i18n="nav_terms">Условия</a></li>
+    <li><a href="#reviews" data-i18n="nav_reviews">Отзывы</a></li>
+    <li><a href="#contacts" data-i18n="nav_contacts">Контакты</a></li>
+  </ul>
+  <div style="display:flex;gap:12px;align-items:center;">
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+      <button class="lang-btn" onclick="setLang('kz')">KZ</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+    <div class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#catalog" onclick="toggleMenu()" data-i18n="nav_catalog">Каталог</a>
+  <a href="#terms" onclick="toggleMenu()" data-i18n="nav_terms">Условия</a>
+  <a href="#reviews" onclick="toggleMenu()" data-i18n="nav_reviews">Отзывы</a>
+  <a href="#contacts" onclick="toggleMenu()" data-i18n="nav_contacts">Контакты</a>
+  <div class="mobile-lang">
+    <button class="lang-btn active" onclick="setLang('ru');toggleMenu()">RU</button>
+    <button class="lang-btn" onclick="setLang('kz');toggleMenu()">KZ</button>
+    <button class="lang-btn" onclick="setLang('en');toggleMenu()">EN</button>
+  </div>
+</div>
+
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <img src="photo_auto/hero_photo.webp" alt="ATA AutoRent" loading="eager" onload="this.classList.add('loaded')">
+  </div>
+  <div class="hero-grid"></div>
+  <div class="hero-badge fade-in" data-i18n="hero_badge">● Алматы — Аренда авто</div>
+  <h1 class="fade-in delay-1"><em data-i18n="hero_title1">Свобода</em><br><span data-i18n="hero_title2">на дороге</span></h1>
+  <p class="hero-sub fade-in delay-2" data-i18n="hero_sub">Без залога и депозита. От 18 лет. Работаем круглосуточно.</p>
+  <div class="hero-ctas fade-in delay-3">
+    <a href="https://wa.me/77055559004?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D1%8F%20%D0%BF%D1%80%D0%B8%D1%88%D0%B5%D0%BB%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83%20%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D1%8B" class="btn-primary" target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.852L0 24l6.335-1.652A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 01-4.961-1.34l-.356-.211-3.762.98.999-3.676-.233-.377A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
+      <span data-i18n="hero_cta1">WhatsApp</span>
+    </a>
+    <a href="#catalog" class="btn-secondary" data-i18n="hero_cta2">Смотреть авто</a>
+    <a href="tel:+77055559004" class="btn-ghost">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .16h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+      <span data-i18n="hero_cta3">Позвонить</span>
+    </a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">0₸</div><div class="stat-label" data-i18n="stat1">Без залога</div></div>
+    <div class="stat"><div class="stat-num">18+</div><div class="stat-label" data-i18n="stat2">Возраст</div></div>
+    <div class="stat"><div class="stat-num">24/7</div><div class="stat-label" data-i18n="stat3">Поддержка</div></div>
+  </div>
+</section>
+
+<section id="catalog">
+  <span class="section-label" data-i18n="catalog_label">Наш автопарк</span>
+  <h2 class="section-title" data-i18n="catalog_title">Выберите<br>автомобиль</h2>
+  <div class="cat-grid">
+    <div class="cat-card cat-basic" onclick="document.getElementById('cat-basic').scrollIntoView({behavior:'smooth'})">
+      <div class="cat-icon">🚗</div><div class="cat-tier">Basic</div>
+      <div class="cat-desc" data-i18n="cat_basic_desc">Комфортные авто для ежедневных поездок по городу</div>
+      <div class="cat-price-range"><span class="cat-dot"></span><span data-i18n="cat_basic_price">от 30 000 ₸ / день</span></div>
+    </div>
+    <div class="cat-card cat-medium" onclick="document.getElementById('cat-medium').scrollIntoView({behavior:'smooth'})">
+      <div class="cat-icon">🚙</div><div class="cat-tier">Medium</div>
+      <div class="cat-desc" data-i18n="cat_medium_desc">Просторные авто для семьи или деловых поездок</div>
+      <div class="cat-price-range"><span class="cat-dot"></span><span data-i18n="cat_medium_price">от 50 000 ₸ / день</span></div>
+    </div>
+    <div class="cat-card cat-premium" onclick="document.getElementById('cat-premium').scrollIntoView({behavior:'smooth'})">
+      <div class="cat-icon">👑</div><div class="cat-tier">Premium</div>
+      <div class="cat-desc" data-i18n="cat_premium_desc">Премиальные авто для особых случаев и VIP</div>
+      <div class="cat-price-range"><span class="cat-dot"></span><span data-i18n="cat_premium_price">от 80 000 ₸ / день</span></div>
+    </div>
+    <div class="cat-card cat-cuv" onclick="document.getElementById('cat-cuv').scrollIntoView({behavior:'smooth'})">
+      <div class="cat-icon">🛻</div><div class="cat-tier">CUV</div>
+      <div class="cat-desc" data-i18n="cat_cuv_desc">Кроссоверы и внедорожники для любых дорог</div>
+      <div class="cat-price-range"><span class="cat-dot"></span><span data-i18n="cat_cuv_price">от 35 000 ₸ / день</span></div>
+    </div>
+  </div>
+  <div class="catalog-section" id="cat-basic">
+    <div class="catalog-section-header">
+      <div class="catalog-section-title">Basic</div>
+      <div class="tier-badge tier-basic" data-i18n="tier_basic_label">Бизнес / Комфорт</div>
+    </div>
+    <div class="cars-grid" id="carsBasic"></div>
+  </div>
+  <div class="catalog-section" id="cat-medium">
+    <div class="catalog-section-header">
+      <div class="catalog-section-title">Medium</div>
+      <div class="tier-badge tier-medium" data-i18n="tier_medium_label">Премиум</div>
+    </div>
+    <div class="cars-grid" id="carsMedium"></div>
+  </div>
+  <div class="catalog-section" id="cat-premium">
+    <div class="catalog-section-header">
+      <div class="catalog-section-title">Premium</div>
+      <div class="tier-badge tier-premium" data-i18n="tier_premium_label">Люкс</div>
+    </div>
+    <div class="cars-grid" id="carsPremium"></div>
+  </div>
+  <div class="catalog-section" id="cat-cuv">
+    <div class="catalog-section-header">
+      <div class="catalog-section-title" style="color:#6eb8d4;">CUV</div>
+      <div class="tier-badge tier-cuv" data-i18n="tier_cuv_label">Кроссоверы / Внедорожники</div>
+    </div>
+    <div class="cars-grid" id="carsCuv"></div>
+  </div>
+</section>
+
+<section id="terms">
+  <span class="section-label" data-i18n="terms_label">Важно знать</span>
+  <h2 class="section-title" data-i18n="terms_title">Условия<br>аренды</h2>
+  <div class="terms-grid" id="termsGrid"></div>
+</section>
+
+<section id="reviews">
+  <span class="section-label" data-i18n="reviews_label">Отзывы клиентов</span>
+  <h2 class="section-title" data-i18n="reviews_title">Что говорят<br>клиенты</h2>
+  <div class="reviews-grid" id="reviewsGrid"></div>
+</section>
+
+<section id="contacts">
+  <span class="section-label" data-i18n="contacts_label">Связаться</span>
+  <h2 class="section-title" data-i18n="contacts_title">Мы на связи</h2>
+  <div class="contacts-wrap">
+    <div class="contact-ctas">
+      <a href="https://wa.me/77055559004?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D1%8F%20%D0%BF%D1%80%D0%B8%D1%88%D0%B5%D0%BB%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83%20%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D1%8B" class="contact-btn btn-whatsapp" target="_blank">
+        <div class="contact-btn-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.852L0 24l6.335-1.652A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 01-4.961-1.34l-.356-.211-3.762.98.999-3.676-.233-.377A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg></div>
+        <div><div style="font-size:.72rem;opacity:.6;margin-bottom:2px;" data-i18n="contact_chat">Написать в чат</div><div>WhatsApp · +7 (705) 555-90-04</div></div>
+      </a>
+      <a href="tel:+77055559004" class="contact-btn btn-call">
+        <div class="contact-btn-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .16h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg></div>
+        <div><div style="font-size:.72rem;opacity:.6;margin-bottom:2px;" data-i18n="contact_callus">Позвонить нам</div><div>+7 (705) 555-90-04</div></div>
+      </a>
+      <a href="https://instagram.com/ata_autorent" class="contact-btn btn-instagram" target="_blank">
+        <div class="contact-btn-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+        <div><div style="font-size:.72rem;opacity:.6;margin-bottom:2px;" data-i18n="contact_follow">Наш Instagram</div><div>@ata_autorent</div></div>
+      </a>
+    </div>
+    <div class="contact-info">
+      <div class="contact-info-title" data-i18n="contact_info_title">Мы в Алматы</div>
+      <div class="info-row">
+        <span class="info-label" data-i18n="contact_addr_label">Адрес</span>
+        <span class="info-value">г. Алматы, ул. Розыбакиева 285/1<br>4-й этаж, кабинет 3</span>
+        <a href="https://2gis.kz/almaty/geo/9430047375173530/76.893417,43.196739" class="info-link" target="_blank">📍 Открыть в 2GIS →</a>
+      </div>
+      <div class="info-row">
+        <span class="info-label" data-i18n="contact_hours_label">Режим работы</span>
+        <div class="badge-247">⚡ 24/7 — Без выходных</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">ATA AutoRent</div>
+  <div class="footer-copy" data-i18n="footer_copy">© 2025 ATA AutoRent. Все права защищены.</div>
+  <div class="footer-dev">Разработано — <a href="http://linkedin.com/in/arnur-azhibay-4080393a8" target="_blank" rel="noopener">Arnur Azhibay</a> &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection#fd9cd39c8f93888fccc5ccbd9a909c9491d39e9290"><span class="__cf_email__" data-cfemail="51307f30233f242360696011363c30383d7f323e3c">[email&#160;protected]</span></a></div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const WA = '77055559004';
+function waLink(name) {
+  return 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Здравствуйте, я пришел с сайта по поводу аренды ' + name);
+}
+
+const carPhotos = {
+  'Toyota Camry':             ['photo_auto/Toyota_Camry_1.jpeg','photo_auto/Toyota_Camry_2.jpeg','photo_auto/Toyota_Camry_3.jpeg'],
+  'Lexus IS 250':             ['photo_auto/Lexus_is_250_1.jpeg','photo_auto/Lexus_is_250_2.jpeg','photo_auto/Lexus_is_250_3.jpeg'],
+  'Kia K5':                   ['photo_auto/KIA_K5_1.jpeg','photo_auto/KIA_K5_2.jpeg','photo_auto/KIA_K5_3.jpeg'],
+  'Hyundai Sonata':           ['photo_auto/Hyundai_Sonata_1.jpeg','photo_auto/Hyundai_Sonata_2.jpeg','photo_auto/Hyundai_Sonata_3.jpeg'],
+  'Mercedes-Benz E 300':      ['photo_auto/Mercedes-Benz_E_300_1.jpeg','photo_auto/Mercedes-Benz_E_300_2.jpeg','photo_auto/Mercedes-Benz_E_300_3.jpeg'],
+  'Lexus GS 350':             ['photo_auto/Lexus_GS_350_1.jpeg','photo_auto/Lexus_GS_350_2.jpeg','photo_auto/Lexus_GS_350_3.jpeg'],
+  'Mercedes-Benz G-Class':    ['photo_auto/Mercedes-Benz_G-Class_1.jpeg','photo_auto/Mercedes-Benz_G-Class_2.jpeg','photo_auto/Mercedes-Benz_G-Class_3.jpeg'],
+  'Toyota Land Cruiser 200':  ['photo_auto/Toyota_Land_Cruiser_200_1.jpeg','photo_auto/Toyota_Land_Cruiser_200_2.jpeg','photo_auto/Toyota_Land_Cruiser_200_3.jpeg'],
+  'BMW 5 Series G30':         ['photo_auto/BMW_5_Series_G30_1.jpeg','photo_auto/BMW_5_Series_G30_2.jpeg','photo_auto/BMW_5_Series_G30_3.jpeg'],
+  'Mercedes-Benz CLS 63 AMG': ['photo_auto/Mercedes-Benz_CLS_63_AMG_1.jpeg','photo_auto/Mercedes-Benz_CLS_63_AMG_2.jpeg','photo_auto/Mercedes-Benz_CLS_63_AMG_3.jpeg'],
+  'Mercedes-Benz S 63 AMG':   ['photo_auto/Mercedes-Benz_S_63_AMG_1.jpeg','photo_auto/Mercedes-Benz_S_63_AMG_2.jpeg','photo_auto/Mercedes-Benz_S_63_AMG_3.jpeg'],
+  'Mercedes-Benz G500':       ['photo_auto/Mercedes-Benz_G50_1.jpeg','photo_auto/Mercedes-Benz_G50_2.jpeg','photo_auto/Mercedes-Benz_G50_3.jpeg'],
+};
+
+const CARS = {
+  basic: [
+    {name:'Toyota Camry',      price:'30 000', seats:5, desc:'Надёжный японский седан. Просторный салон, плавный ход, идеален для города и трассы.',
+     ru:{cls:'Бизнес-седан',trans:'Автомат',badge:'Бизнес'},    kz:{cls:'Іскери седан',  trans:'Автомат',badge:'Бизнес'},    en:{cls:'Business sedan', trans:'Automatic',badge:'Business'}},
+    {name:'Lexus IS 250',      price:'30 000', seats:5, desc:'Спортивный премиум-седан с кожаным салоном. Динамичный и стильный.',
+     ru:{cls:'Бизнес-седан',trans:'Автомат',badge:'Бизнес'},    kz:{cls:'Іскери седан',  trans:'Автомат',badge:'Бизнес'},    en:{cls:'Business sedan', trans:'Automatic',badge:'Business'}},
+    {name:'Kia K5',            price:'35 000', seats:5, desc:'Современный корейский седан с яркой внешностью и богатой комплектацией.',
+     ru:{cls:'Комфорт-седан',trans:'Автомат',badge:'Комфорт'},  kz:{cls:'Жайлы седан',   trans:'Автомат',badge:'Жайлы'},    en:{cls:'Comfort sedan',  trans:'Automatic',badge:'Comfort'}},
+    {name:'Hyundai Sonata',    price:'40 000', seats:5, desc:'Комфортный и вместительный седан бизнес-класса для любых поездок.',
+     ru:{cls:'Бизнес-седан',trans:'Автомат',badge:''},          kz:{cls:'Іскери седан',  trans:'Автомат',badge:''},          en:{cls:'Business sedan', trans:'Automatic',badge:''}}
+  ],
+  medium: [
+    {name:'Lexus GS 350',           price:'50 000', seats:5, desc:'Мощный премиум-седан с V6. Спортивная управляемость и роскошный комфорт.',
+     ru:{cls:'Премиум-седан',trans:'Автомат',badge:'Премиум'}, kz:{cls:'Премиум седан',     trans:'Автомат',badge:'Премиум'}, en:{cls:'Premium sedan', trans:'Automatic',badge:'Premium'}},
+    {name:'Mercedes-Benz E 300',price:'50 000',seats:5, desc:'Представительский немецкий седан. Роскошный салон, передовые технологии, статус.',
+     ru:{cls:'Бизнес-седан',trans:'Автомат',badge:'Популярный'},kz:{cls:'Іскери седан',  trans:'Автомат',badge:'Танымал'},  en:{cls:'Business sedan', trans:'Automatic',badge:'Popular'}},
+    {name:'BMW 5 Series G30',       price:'70 000', seats:5, desc:'Спортивный седан бизнес-класса. Динамика, технологии и баварское качество.',
+     ru:{cls:'Премиум-седан',trans:'Автомат',badge:'BMW'},     kz:{cls:'Премиум седан',     trans:'Автомат',badge:'BMW'},     en:{cls:'Premium sedan', trans:'Automatic',badge:'BMW'}}
+  ],
+  premium: [
+    {name:'Mercedes-Benz CLS 63 AMG', price:'80 000',  seats:5, desc:'Эксклюзивное AMG-купе с 5.5L V8 биturbo. 557 л.с., 0-100 за 4.3 сек.',
+     ru:{cls:'Люкс-купе', trans:'Автомат',badge:'AMG'},     kz:{cls:'Люкс купе', trans:'Автомат',badge:'AMG'},     en:{cls:'Luxury coupe', trans:'Automatic',badge:'AMG'}},
+    {name:'Mercedes-Benz S 63 AMG',   price:'120 000', seats:5, desc:'Флагманский лимузин AMG. Массажные кресла, ночное видение, 612 л.с.',
+     ru:{cls:'Люкс-седан',trans:'Автомат',badge:'S-Class'}, kz:{cls:'Люкс седан',trans:'Автомат',badge:'S-Class'}, en:{cls:'Luxury sedan', trans:'Automatic',badge:'S-Class'}}
+  ],
+  cuv: [
+    {name:'Mercedes-Benz G-Class',  price:'50 000', seats:5, desc:'Легендарный внедорожник с премиальным оснащением. Подходит для города и бездорожья.',
+     ru:{cls:'Премиум SUV',  trans:'Автомат',badge:'G-Wagon'}, kz:{cls:'Премиум SUV',       trans:'Автомат',badge:'G-Wagon'}, en:{cls:'Premium SUV',   trans:'Automatic',badge:'G-Wagon'}},
+    {name:'Toyota Land Cruiser 200',price:'60 000', seats:7, desc:'Флагманский внедорожник Toyota. 7 мест, полный привод, непревзойдённая надёжность.',
+     ru:{cls:'Премиум SUV',  trans:'Автомат',badge:'4×4'},     kz:{cls:'Жол талғамайтын',   trans:'Автомат',badge:'4×4'},     en:{cls:'Premium SUV',   trans:'Automatic',badge:'4×4'}},
+     {name:'Mercedes-Benz G500',       price:'120 000', seats:5, desc:'Культовый G-Wagon в версии G500. Максимальный статус, полный привод, роскошь.',
+     ru:{cls:'Люкс SUV',  trans:'Автомат',badge:'G-Class'}, kz:{cls:'Люкс SUV',  trans:'Автомат',badge:'G-Class'}, en:{cls:'Luxury SUV',   trans:'Automatic',badge:'G-Class'}}
+  ]
+};
+
+const i18n = {
+  ru: {
+    nav_catalog:'Каталог', nav_terms:'Условия', nav_reviews:'Отзывы', nav_contacts:'Контакты',
+    hero_badge:'● Алматы — Аренда авто', hero_title1:'Свобода', hero_title2:'на дороге',
+    hero_sub:'Без залога и депозита. От 18 лет. Работаем круглосуточно.',
+    hero_cta1:'WhatsApp', hero_cta2:'Смотреть авто', hero_cta3:'Позвонить',
+    stat1:'Без залога', stat2:'Возраст', stat3:'Поддержка',
+    catalog_label:'Наш автопарк', catalog_title:'Выберите\nавтомобиль',
+    cat_basic_desc:'Комфортные авто для ежедневных поездок по городу',
+    cat_medium_desc:'Просторные авто для семьи или деловых поездок',
+    cat_premium_desc:'Премиальные авто для особых случаев и VIP',
+    cat_basic_price:'от 30 000 ₸ / день', cat_medium_price:'от 50 000 ₸ / день', cat_premium_price:'от 80 000 ₸ / день', cat_cuv_price:'от 35 000 ₸ / день', cat_cuv_desc:'Кроссоверы и внедорожники для любых дорог',
+    tier_basic_label:'Бизнес / Комфорт', tier_medium_label:'Премиум', tier_premium_label:'Люкс', tier_cuv_label:'Кроссоверы / Внедорожники',
+    per_day:'/ день', rent_btn:'Арендовать', car_seats:'мест', m_seats:'Мест', m_trans:'Коробка', m_deposit:'Залог', m_pday:'/ день',
+    terms_label:'Важно знать', terms_title:'Условия\nаренды',
+    reviews_label:'Отзывы клиентов', reviews_title:'Что говорят\nклиенты',
+    contacts_label:'Связаться', contacts_title:'Мы на связи',
+    contact_chat:'Написать в чат', contact_callus:'Позвонить нам', contact_follow:'Наш Instagram',
+    contact_info_title:'Мы в Алматы', contact_addr_label:'Адрес', contact_hours_label:'Режим работы',
+    footer_copy:'© 2025 ATA AutoRent. Все права защищены.',
+    terms:[
+      {icon:'🪪',title:'Возраст от 18 лет',text:'Минимальный возраст арендатора — 18 лет. Водительское удостоверение обязательно.'},
+      {icon:'💰',title:'Без залога и депозита',text:'Выдаём автомобили без залога и депозита. Никаких скрытых платежей.'},
+      {icon:'⛽',title:'Топливо',text:'Автомобиль выдаётся с полным баком и возвращается также с полным баком.'},
+      {icon:'📍',title:'Геозона БАКАД',text:'Передвижение в пределах БАКАД без доплат. Выезд за геозону и межгород — за доп. плату.'},
+      {icon:'🚗',title:'Аренда без водителя',text:'Аренда только без водителя. Вы самостоятельно управляете автомобилем.'},
+      {icon:'📞',title:'Работаем 24/7',text:'Принимаем заявки и отвечаем на звонки круглосуточно, без выходных.'}
+    ],
+    reviews:[
+      {name:'Алибек С.',car:'Toyota Camry',stars:5,text:'Отличный сервис! Машина в идеальном состоянии, без залога — это огромный плюс. Буду обращаться снова.'},
+      {name:'Дина К.',car:'Kia K5',stars:5,text:'Взяла K5 на выходные, всё прошло отлично. Менеджеры вежливые, оформление за 10 минут.'},
+      {name:'Руслан М.',car:'Hyundai Sonata',stars:5,text:'Приятно удивлён — никакого залога, авто чистое. Цены честные. Рекомендую!'},
+      {name:'Айгерим Б.',car:'Mercedes-Benz E 300',stars:5,text:'Брала E 300 на свадьбу, выглядело шикарно. Спасибо за оперативность!'},
+      {name:'Максим Т.',car:'BMW 5 Series G30',stars:5,text:'Отличный BMW, едет мягко. Без залога — огромный плюс. Рекомендую!'},
+      {name:'Зарина Н.',car:'Toyota Land Cruiser 200',stars:5,text:'Брали на горную поездку, машина справилась на отлично. Спасибо команде!'}
+    ]
+  },
+  kz: {
+    nav_catalog:'Каталог', nav_terms:'Шарттар', nav_reviews:'Пікірлер', nav_contacts:'Байланыс',
+    hero_badge:'● Алматы — Автоны жалға алу', hero_title1:'Жолдағы', hero_title2:'еркіндік',
+    hero_sub:'Кепілдіксіз. 18 жастан. Тәулік бойы жұмыс жасаймыз.',
+    hero_cta1:'WhatsApp', hero_cta2:'Автоларды қарау', hero_cta3:'Қоңырау шалу',
+    stat1:'Кепілдіксіз', stat2:'Жас', stat3:'Қолдау',
+    catalog_label:'Біздің автопарк', catalog_title:'Автомобиль\nтаңдаңыз',
+    cat_basic_desc:'Күнделікті қала сапарлары үшін ыңғайлы автомобильдер',
+    cat_medium_desc:'Отбасылық немесе іскерлік сапарлар үшін кең автомобильдер',
+    cat_premium_desc:'Ерекше жағдайлар мен VIP үшін премиум автомобильдер',
+    cat_basic_price:'30 000 ₸-ден / күніне', cat_medium_price:'50 000 ₸-ден / күніне', cat_premium_price:'80 000 ₸-ден / күніне', cat_cuv_price:'35 000 ₸-ден / күніне', cat_cuv_desc:'Кроссоверлер мен жол талғамайтын көліктер',
+    tier_basic_label:'Бизнес / Жайлы', tier_medium_label:'Премиум', tier_premium_label:'Люкс', tier_cuv_label:'Кроссоверлер / Жол талғамайтын',
+    per_day:'/ күніне', rent_btn:'Жалға алу', car_seats:'орын',
+    terms_label:'Маңызды', terms_title:'Жалдау\nшарттары',
+    reviews_label:'Клиент пікірлері', reviews_title:'Клиенттер\nне дейді',
+    contacts_label:'Байланысу', contacts_title:'Біз желідеміз',
+    contact_chat:'Чатқа жазу', contact_callus:'Қоңырау шалу', contact_follow:'Біздің Instagram',
+    contact_info_title:'Біз Алматыдамыз', contact_addr_label:'Мекенжай', contact_hours_label:'Жұмыс уақыты',
+    footer_copy:'© 2025 ATA AutoRent. Барлық құқықтар қорғалған.',
+    terms:[
+      {icon:'🪪',title:'18 жастан',text:'18 жастан жалға алуға болады. Жүргізуші куәлігі болуы міндетті.'},
+      {icon:'💰',title:'Кепілдіксіз',text:'Кепілдік пен депозитсіз автомобиль береміз. Жасырын төлемдер жоқ.'},
+      {icon:'⛽',title:'Отын',text:'Автомобиль толық бакпен беріледі және толық бакпен қайтарылады.'},
+      {icon:'📍',title:'БАКАД геоаймағы',text:'БАКАД шегінде қосымша төлемсіз. Қалааралық — қосымша ақыға.'},
+      {icon:'🚗',title:'Жүргізушісіз жалдау',text:'Автокөлікті жүргізушісіз беріледі. Көлікті өзіңіз басқарасыз.'},
+      {icon:'📞',title:'24/7 жұмыс',text:'Тәулік бойы жалға беріп сұрақтарыңызға жауап береміз, демалыссыз.'}
+    ],
+    reviews:[
+      {name:'Әлібек С.',car:'Toyota Camry',stars:5,text:'Тамаша сервис! Машина керемет жағдайда, кепілдіксіз — бұл үлкен плюс.'},
+      {name:'Дина Қ.',car:'Kia K5',stars:5,text:'Демалыс күндері K5 алдым, бәрі жақсы өтті. Менеджерлер сыпайы.'},
+      {name:'Руслан М.',car:'Hyundai Sonata',stars:5,text:'Кепілдіксіз, таза авто. Бағалар адал. Ұсынамын!'},
+      {name:'Айгерім Б.',car:'Mercedes-Benz E 300',stars:5,text:'Тойға E 300 алдым, тамаша көрінді. Рахмет!'},
+      {name:'Максим Т.',car:'BMW 5 Series G30',stars:5,text:'Тамаша BMW, жұмсақ жүреді. Кепілдіксіз — үлкен плюс!'},
+      {name:'Зарина Н.',car:'Toyota Land Cruiser 200',stars:5,text:'Таулы сапарға алдық, машина тамаша жұмыс істеді. Рахмет!'}
+    ]
+  },
+  en: {
+    nav_catalog:'Catalog', nav_terms:'Terms', nav_reviews:'Reviews', nav_contacts:'Contacts',
+    hero_badge:'● Almaty — Car Rental', hero_title1:'Freedom', hero_title2:'on the road',
+    hero_sub:'No deposit required. From age 18. Available 24/7.',
+    hero_cta1:'WhatsApp', hero_cta2:'View cars', hero_cta3:'Call us',
+    stat1:'No deposit', stat2:'Min. age', stat3:'Support',
+    catalog_label:'Our fleet', catalog_title:'Choose\nyour car',
+    cat_basic_desc:'Comfortable cars for everyday city driving',
+    cat_medium_desc:'Spacious cars for family or business trips',
+    cat_premium_desc:'Premium cars for special occasions and VIP',
+    cat_basic_price:'from 30,000 ₸ / day', cat_medium_price:'from 50,000 ₸ / day', cat_premium_price:'from 80,000 ₸ / day', cat_cuv_price:'from 35,000 ₸ / day', cat_cuv_desc:'Crossovers and SUVs for any road',
+    tier_basic_label:'Business / Comfort', tier_medium_label:'Premium', tier_premium_label:'Luxury', tier_cuv_label:'Crossovers / SUV',
+    per_day:'/ day', rent_btn:'Rent', car_seats:'seats', m_seats:'Seats', m_trans:'Gearbox', m_deposit:'Deposit', m_pday:'/ day',
+    terms_label:'Important', terms_title:'Rental\nterms',
+    reviews_label:'Customer reviews', reviews_title:'What clients\nsay',
+    contacts_label:'Get in touch', contacts_title:"We\'re here",
+    contact_chat:'Message us', contact_callus:'Call us', contact_follow:'Our Instagram',
+    contact_info_title:"We\'re in Almaty", contact_addr_label:'Address', contact_hours_label:'Working hours',
+    footer_copy:'© 2025 ATA AutoRent. All rights reserved.',
+    terms:[
+      {icon:'🪪',title:'Age 18+',text:'Minimum rental age is 18. Valid driver license required.'},
+      {icon:'💰',title:'No deposit',text:'We provide cars with no deposit. No hidden fees.'},
+      {icon:'⛽',title:'Fuel policy',text:'Car is provided with a full tank and must be returned with a full tank.'},
+      {icon:'📍',title:'BAKAD zone',text:'Free movement within BAKAD. Out-of-city trips — extra charge applies.'},
+      {icon:'🚗',title:'Self-drive only',text:'Rental is self-drive only. You are the driver.'},
+      {icon:'📞',title:'24/7 support',text:'We accept bookings and answer calls around the clock, every day.'}
+    ],
+    reviews:[
+      {name:'Alibek S.',car:'Toyota Camry',stars:5,text:'Great service! Car in perfect condition, no deposit — huge plus. Will come back.'},
+      {name:'Dina K.',car:'Kia K5',stars:5,text:'Rented K5 for the weekend, everything went smoothly. Friendly staff.'},
+      {name:'Ruslan M.',car:'Hyundai Sonata',stars:5,text:'Pleasantly surprised — no deposit, clean car. Fair prices. Recommend!'},
+      {name:'Aigerim B.',car:'Mercedes-Benz E 300',stars:5,text:'Rented E 300 for a wedding, looked stunning. Thank you!'},
+      {name:'Maxim T.',car:'BMW 5 Series G30',stars:5,text:'Excellent BMW, smooth ride. No deposit is a huge plus!'},
+      {name:'Zarina N.',car:'Toyota Land Cruiser 200',stars:5,text:'Took it for a mountain trip, handled everything perfectly. Great team!'}
+    ]
+  }
+};
+
+const ytIds = ['','YOUTUBE_ID_2','YOUTUBE_ID_3','YOUTUBE_ID_4','YOUTUBE_ID_5','YOUTUBE_ID_6'];
+
+let lang = 'ru';
+
+function setLang(l) {
+  lang = l;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent === l.toUpperCase()));
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = i18n[l][el.getAttribute('data-i18n')];
+    if (v) el.textContent = v;
+  });
+  renderCars(); renderTerms(); renderReviews();
+}
+
+function carCard(c) {
+  const t = i18n[lang];
+  const loc = c[lang];
+  const id = 'sl' + Math.random().toString(36).slice(2,7);
+  const ph = carPhotos[c.name] || [];
+  let slides = '';
+  for (let i = 0; i < 3; i++) {
+    const url = ph[i];
+    if (!url) { slides += '<div class="car-slide"><div class="car-img-placeholder">🚗</div></div>'; continue; }
+    if (i === 0) slides += '<div class="car-slide"><img src="' + url + '" alt="' + c.name + '" loading="lazy"></div>';
+    else slides += '<div class="car-slide"><img data-src="' + url + '" alt="' + c.name + '" class="ls"></div>';
+  }
+  var _n = c.name.replace(/'/g,"&#39;"), _cl = loc.cls.replace(/'/g,"&#39;"), _desc = (c.desc||'').replace(/'/g,"&#39;");
+  return '<div class="car-card">'+
+  '<div class="car-slider" id="' + id + '">' +
+    '<div class="car-slides">' + slides + '</div>' +
+    '<button class="slider-btn prev" onclick="sm(\'' + id + '\', -1)">&#8249;</button>' +
+    '<button class="slider-btn next" onclick="sm(\'' + id + '\', 1)">&#8250;</button>' +
+    '<div class="slider-dots">' +
+      '<div class="slider-dot active" onclick="st(\'' + id + '\', 0)"></div>' +
+      '<div class="slider-dot" onclick="st(\'' + id + '\', 1)"></div>' +
+      '<div class="slider-dot" onclick="st(\'' + id + '\', 2)"></div>' +
+    '</div>' +
+    (loc.badge ? '<div class="car-badge">' + loc.badge + '</div>' : '') +
+  '</div>' +
+  '<div class="car-body" style="cursor:pointer" onclick="openModal(\'' + _n + '\',\'' + c.price + '\',\'' + c.seats + '\',\'' + _cl + '\',\'' + loc.trans + '\',\'' + _desc + '\')">'+
+    '<div class="car-name">' + c.name + '</div>' +
+    '<div class="car-class">' + loc.cls + '</div>' +
+    '<div class="car-specs">' +
+      '<div class="car-spec"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>' + c.seats + ' ' + t.car_seats + '</div>' +
+      '<div class="car-spec"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>' + loc.trans + '</div>' +
+    '</div>' +
+    '<div class="car-footer">' +
+      '<div><div class="car-price-num">' + c.price + ' ₸</div><div class="car-price-per">' + t.per_day + '</div></div>' +
+      '<a href="' + waLink(c.name) + '" class="btn-rent" target="_blank">' + t.rent_btn + '</a>' +
+    '</div>' +
+  '</div>' +
+'</div>';
+}
+
+function sm(id, dir) {
+  const el = document.getElementById(id);
+  const s = el.querySelector('.car-slides');
+  const total = el.querySelectorAll('.slider-dot').length;
+  st(id, ((s._cur || 0) + dir + total) % total);
+}
+function st(id, idx) {
+  const el = document.getElementById(id);
+  const s = el.querySelector('.car-slides');
+  s.style.transform = 'translateX(-' + (idx * 100) + '%)';
+  s._cur = idx;
+  el.querySelectorAll('.slider-dot').forEach(function(d,i){ d.classList.toggle('active', i===idx); });
+  if (!el._pl) {
+    el._pl = true;
+    el.querySelectorAll('.ls[data-src]').forEach(function(img){
+      img.src = img.dataset.src;
+      delete img.dataset.src;
+      img.classList.remove('ls');
+    });
+  }
+}
+
+function renderCars() {
+  document.getElementById('carsBasic').innerHTML   = CARS.basic.map(carCard).join('');
+  document.getElementById('carsMedium').innerHTML  = CARS.medium.map(carCard).join('');
+  document.getElementById('carsPremium').innerHTML = CARS.premium.map(carCard).join('');
+  document.getElementById('carsCuv').innerHTML     = CARS.cuv.map(carCard).join('');
+}
+function renderTerms() {
+  document.getElementById('termsGrid').innerHTML = i18n[lang].terms.map(function(x){
+    return '<div class="term-card"><div class="term-icon">'+x.icon+'</div><div class="term-title">'+x.title+'</div><div class="term-text">'+x.text+'</div></div>';
+  }).join('');
+}
+function renderReviews() {
+  document.getElementById('reviewsGrid').innerHTML = i18n[lang].reviews.map(function(r,i){
+    const id = ytIds[i], real = id && id.indexOf('YOUTUBE_ID_') < 0;
+    const media = real
+      ? '<div class="review-yt-wrap"><iframe src="https://www.youtube.com/embed/'+id+'?rel=0&modestbranding=1" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div>'
+      : '<div class="review-yt-placeholder"><div class="yt-placeholder-inner"><svg width="52" height="52" viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 00-2.12-2.14C19.54 3.5 12 3.5 12 3.5s-7.54 0-9.38.55A3.02 3.02 0 00.5 6.19C0 8.04 0 12 0 12s0 3.96.5 5.81a3.02 3.02 0 002.12 2.14C4.46 20.5 12 20.5 12 20.5s7.54 0 9.38-.55a3.02 3.02 0 002.12-2.14C24 15.96 24 12 24 12s0-3.96-.5-5.81z" fill="#ff0000" opacity=".8"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg><div class="yt-num">Отзыв '+(i+1)+ '</div><div class="yt-hint">Connection failed<br>в ytIds['+(i)+']</div></div></div>';
+    return '<div class="review-card">'+media+'<div class="review-body"><div class="review-stars">'+'★'.repeat(r.stars)+'</div><div class="review-name">'+r.name+'</div><div class="review-car">'+r.car+'</div><div class="review-text">'+r.text+'</div></div></div>';
+  }).join('');
+}
+function openModal(name,price,seats,cls,trans,desc){
+  var t=i18n[lang], ph=carPhotos[name]||[];
+  document.getElementById('modalName').textContent=name;
+  document.getElementById('modalCls').textContent=cls;
+  document.getElementById('modalPrice').textContent=price+' ₸';
+  document.getElementById('modalPriceLbl').textContent=t.m_pday;
+  var wa=document.getElementById('modalWa'); wa.href=waLink(name); wa.textContent=t.rent_btn;
+  document.getElementById('modalImg').innerHTML=ph[0]?'<img class="modal-img" src="'+ph[0]+'" alt="'+name+'">':'<div class="modal-img-placeholder">🚗</div>';
+  document.getElementById('modalSpecs').innerHTML=
+    '<div class="modal-spec"><div class="modal-spec-label">'+t.m_seats+'</div><div class="modal-spec-value">'+seats+'</div></div>'+
+    '<div class="modal-spec"><div class="modal-spec-label">'+t.m_trans+'</div><div class="modal-spec-value">'+trans+'</div></div>'+
+    '<div class="modal-spec"><div class="modal-spec-label">Класс</div><div class="modal-spec-value">'+cls+'</div></div>'+
+    '<div class="modal-spec"><div class="modal-spec-label">'+t.m_deposit+'</div><div class="modal-spec-value">0 ₸</div></div>';
+  var descEl = document.getElementById('modalDesc');
+  if(descEl){ descEl.textContent = desc || ''; descEl.style.display = desc ? 'block' : 'none'; }
+  document.getElementById('carModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('carModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+
+setLang('ru');
+</script>
+</body>
+</html>
